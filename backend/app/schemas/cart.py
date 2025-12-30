@@ -23,4 +23,9 @@ class CartItem(BaseModel):
 
     image_url: Optional[str] = Field(None, description="Product image URL")
 
+class CartItemResponse(BaseModel):
+    items: list[CartItem] = Field(..., description="List of items in cart")
+    total: int = Field(..., description="Total cart price")
+    items_count: int = Field(..., description="Total number of item in cart")
+
 
