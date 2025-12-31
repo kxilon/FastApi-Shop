@@ -1,6 +1,7 @@
-from typing import List
+from typing import List, Optional
 from sqlalchemy.orm import Session
 from backend.app.models import Category
+from backend.app.schemas.category import CategoryCreate
 
 
 class CategoryRepository:
@@ -9,3 +10,17 @@ class CategoryRepository:
 
     def get_all(self) -> List[Category]:
         return self.db.query(Category).all()
+
+    def get_by_id(self, category_id: int) -> Optional[Category]:
+        return self.db.query(Category).filter(Category.id == category_id).first()
+
+    def get_by_slug(self, slug: str) -> Optional[Category]:
+        return self.db.query(Category).filter(Category.slug == slug).first()
+
+    def create(self, category_data: CategoryCreate) -> Category:
+        db_category = Category(**category_data.model_dump())
+        self.db.add(db_category)
+        self.db.commit()
+        self.db.refresh(db_category)
+        return db_category
+
