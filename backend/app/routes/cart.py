@@ -4,9 +4,9 @@ from fastapi import APIRouter, status, Depends
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
-from backend.app.database import get_db
-from backend.app.schemas.cart import CartItemCreate, CartItemResponse, CartItemUpdate
-from backend.app.services.cart_service import CartService
+from app.database import get_db
+from app.schemas.cart import CartItemCreate, CartItemResponse, CartItemUpdate
+from app.services.cart_service import CartService
 
 router = APIRouter(
     prefix="/api/cart",

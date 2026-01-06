@@ -1,11 +1,10 @@
-from typing import List
-
 from fastapi import APIRouter, Depends, status
 from sqlalchemy.orm import Session
 
-from backend.app.database import get_db
-from backend.app.schemas.product import ProductListResponse, ProductResponse
-from backend.app.services.product_service import ProductService
+from app.database import get_db
+from app.schemas.product import ProductListResponse, ProductResponse
+from app.services.product_service import ProductService
+
 
 router = APIRouter(
     prefix="/api/products",

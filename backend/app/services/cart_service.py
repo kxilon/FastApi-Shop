@@ -3,8 +3,8 @@ from typing import Dict
 from fastapi import HTTPException, status
 from sqlalchemy.orm import Session
 
-from backend.app.repositories.product_repository import ProductRepository
-from backend.app.schemas.cart import CartItemCreate, CartItemUpdate, CartItemResponse, CartItem
+from app.repositories.product_repository import ProductRepository
+from app.schemas.cart import CartItemCreate, CartItemUpdate, CartItemResponse, CartItem
 
 
 class CartService:

@@ -3,9 +3,9 @@ from typing import List
 from fastapi import HTTPException, status
 from sqlalchemy.orm import Session
 
-from backend.app.repositories.category_repository import CategoryRepository
-from backend.app.repositories.product_repository import ProductRepository
-from backend.app.schemas.product import ProductResponse, ProductCreate, ProductListResponse
+from app.repositories.category_repository import CategoryRepository
+from app.repositories.product_repository import ProductRepository
+from app.schemas.product import ProductResponse, ProductCreate, ProductListResponse
 
 
 class ProductService:

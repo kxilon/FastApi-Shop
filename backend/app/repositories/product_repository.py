@@ -2,8 +2,8 @@ from typing import Optional, List
 
 from sqlalchemy.orm import Session, joinedload
 
-from backend.app.models import Product
-from backend.app.schemas.product import ProductCreate
+from app.models import Product
+from app.schemas.product import ProductCreate
 
 
 class ProductRepository:
