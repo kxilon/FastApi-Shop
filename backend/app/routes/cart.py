@@ -33,7 +33,7 @@ def add_to_cart(request: AddToCartRequest, db: Session = Depends(get_db)):
     updated_cart = service.add_to_cart(request.cart, item)
     return {"cart": updated_cart}
 
-@router.get("", response_model=CartItemResponse, status_code=status.HTTP_200_OK)
+@router.post("", response_model=CartItemResponse, status_code=status.HTTP_200_OK)
 def get_cart(cart_data: Dict[int, int], db: Session = Depends(get_db)):
     return CartService(db).get_cart_details(cart_data)
 
